@@ -36,12 +36,32 @@ bool testOfSuma(void) {
 			result = false;
 
 	// Second test
+	if (result)
+	{
+		int testInput2[] = {2, 4, 6, 8, 10, 12, 14};
+		n = 7; // sizeof(testInput2);
+		int testOutput2[] = {2, 6, 12, 20, 30, 42, 56};
 
-	// ...
+		suma(testInput2, n); 
+
+		for (int i = 0; i < n; i++)
+			if (testInput2[i] != testOutput2[i])
+				result = false;
+	}
 
 	// Third test
+	if (result)
+	{
+		int testInput3[] = {0, 10, 20};
+		n = 3; // sizeof(testInput3);
+		int testOutput3[] = {0, 10, 30};
 
-	// ...
+		suma(testInput3, n);
+
+		for (int i = 0; i < n; i++)
+			if (testInput3[i] != testOutput3[i])
+				result = false;
+	}
 
 	return result;
 }
