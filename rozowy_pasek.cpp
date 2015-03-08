@@ -74,12 +74,62 @@ bool testOfSuma(void) {
 }
 */
 
+bool testOfWroc() {
+
+	bool result2;
+
+	// First test
+	int testOutput1[] = { 0, 1, 2, 3, 4 };
+	int n = 5; // sizeof(testInput1);
+	int testInput1[] = { 0, 1, 3, 6, 10 };
+
+	wroc(testInput1, n);
+
+	result2 = true;
+
+	for (int i = 0; i < n; i++)
+		if (testInput1[i] != testOutput1[i])
+			result2 = false;
+
+	// Second test
+	if (result2)
+	{
+		int testOutput2[] = { 2, 4, 6, 8, 10, 12, 14 };
+		n = 7; // sizeof(testInput2);
+		int testInput2[] = { 2, 6, 12, 20, 30, 42, 56 };
+
+		wroc(testInput2, n);
+
+		for (int i = 0; i < n; i++)
+			if (testInput2[i] != testOutput2[i])
+				result2 = false;
+	}
+
+	// Third test
+	if (result2)
+	{
+		int testOutput3[] = { 0, 10, 20 };
+		n = 3; // sizeof(testInput3);
+		int testInput3[] = { 0, 10, 30 };
+
+		wroc(testInput3, n);
+
+		for (int i = 0; i < n; i++)
+			if (testInput3[i] != testOutput3[i])
+				result2 = false;
+	}
+
+	return result2;
+}
+
 
 int main()
 {
 	/*cout << "Function suma(t,n) is " << (testOfSuma() ? "correct." : "incorrect.");*/
+
+	cout << "Function wroc(t,n) is " << (testOfWroc() ? "correct." : "incorrect.");
 	
-	int n;
+	/*int n;
 
 	cin >> n;
 
@@ -99,7 +149,7 @@ int main()
 	wroc(t, n);
 
 	for (int i = 0; i < n; i++)
-		cout << t[i] << " ";
+		cout << t[i] << " ";*/
 
 	return 0;
 }
