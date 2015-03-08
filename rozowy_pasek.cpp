@@ -12,12 +12,19 @@ void suma(int t[], int n)
 
 }
 
+void wroc(int t[], int n)
+{
+	for (int i = n - 1; i > 0; i--)
+		t[i] -= t[i - 1];
+}
+
 
 /*
 testOfSuma(void)
 Input: none
 Output: true if and only if suma(t,n) is correct (on some data)
 */
+/*
 bool testOfSuma(void) {
 
 	bool result;
@@ -65,13 +72,13 @@ bool testOfSuma(void) {
 
 	return result;
 }
+*/
 
 
 int main()
 {
-	cout << "Function suma(t,n) is " << (testOfSuma() ? "correct." : "incorrect.");
+	/*cout << "Function suma(t,n) is " << (testOfSuma() ? "correct." : "incorrect.");*/
 	
-	/*
 	int n;
 
 	cin >> n;
@@ -85,7 +92,14 @@ int main()
 	suma(t, n);
 
 	for (int i = 0; i < n; i++)
-		cout << t[i] << " "; */
+		cout << t[i] << " ";
+
+	cout << endl << endl;
+
+	wroc(t, n);
+
+	for (int i = 0; i < n; i++)
+		cout << t[i] << " ";
 
 	return 0;
 }
